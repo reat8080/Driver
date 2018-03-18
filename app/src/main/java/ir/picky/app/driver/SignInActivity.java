@@ -65,7 +65,8 @@ public class SignInActivity extends AppCompatActivity {
             int islogin =  getUserCode(message);
             if (islogin == 1) {
                 storeInDatabase();
-                
+                Intent intent2 = new Intent(SignInActivity.this, MapsActivity.class);
+                startActivity(intent2);
             }
         }
     };
@@ -98,7 +99,9 @@ public class SignInActivity extends AppCompatActivity {
             //requestPackage.setParam("creat", "2");
             Intent intent = new Intent(this, MyService.class);
             intent.putExtra(MyService.REQUEST_PACKAGE, requestPackage);
-            startService(intent);
+            //startService(intent);
+            Intent intent2 = new Intent(SignInActivity.this, MapsActivity.class);
+            startActivity(intent2);
         }
 
 
@@ -107,8 +110,8 @@ public class SignInActivity extends AppCompatActivity {
     private void storeInDatabase() {
         ContentValues userValue = new ContentValues();
         userValue.put("user", "");
-        userValue.put("islogin", "");
-        database.insert("phone_number", null, userValue);
+        userValue.put("islogin", 1 );
+        database.insert("user", null, userValue);
     }
 
 }

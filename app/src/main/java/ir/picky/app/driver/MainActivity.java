@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(this, SignInActivity.class);
                     startActivity(intent);
                 } else {
-//                    Intent intent = new Intent(this, MapsActivity.class);
-//                    startActivity(intent);
+                    Intent intent = new Intent(this, MapsActivity.class);
+                    startActivity(intent);
                 }
 
             } catch (Exception e) {
